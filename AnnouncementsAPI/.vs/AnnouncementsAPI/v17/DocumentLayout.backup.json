@@ -1,0 +1,390 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\controllers\\announcementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:controllers\\announcementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\middleware\\globalerrorhandling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:middleware\\globalerrorhandling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\enums\\loginresponseenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:enums\\loginresponseenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\enums\\registerresponseenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:enums\\registerresponseenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\extensions\\appextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:extensions\\appextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\repositories\\announcementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:repositories\\announcementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\repositories\\interfaces\\iannouncementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:repositories\\interfaces\\iannouncementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\services\\announcementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:services\\announcementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\dtos\\refreshtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:dtos\\refreshtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\enums\\categoryenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:enums\\categoryenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\services\\interfaces\\iannouncementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:services\\interfaces\\iannouncementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\models\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:models\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\models\\announcement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:models\\announcement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\dtos\\announcementupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:dtos\\announcementupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|d:\\study\\projects\\announcements\\announcementsapi\\migrations\\20241218111806_add_identity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BD98F88-D30E-44A7-99E6-8D52960C096A}|AnnouncementsAPI.csproj|solutionrelative:migrations\\20241218111806_add_identity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:24:30.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA0wAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:22:49.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterResponseEnum.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Enums\\RegisterResponseEnum.cs",
+              "RelativeDocumentMoniker": "Enums\\RegisterResponseEnum.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Enums\\RegisterResponseEnum.cs",
+              "RelativeToolTip": "Enums\\RegisterResponseEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:21:13.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginResponseEnum.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Enums\\LoginResponseEnum.cs",
+              "RelativeDocumentMoniker": "Enums\\LoginResponseEnum.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Enums\\LoginResponseEnum.cs",
+              "RelativeToolTip": "Enums\\LoginResponseEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:21:05.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "RefreshTokenDto.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Dtos\\RefreshTokenDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\RefreshTokenDto.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Dtos\\RefreshTokenDto.cs",
+              "RelativeToolTip": "Dtos\\RefreshTokenDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:20:23.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:19:25.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "20241218111806_Add_Identity.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Migrations\\20241218111806_Add_Identity.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241218111806_Add_Identity.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Migrations\\20241218111806_Add_Identity.cs",
+              "RelativeToolTip": "Migrations\\20241218111806_Add_Identity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:18:06.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AnnouncementController.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Controllers\\AnnouncementController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AnnouncementController.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Controllers\\AnnouncementController.cs",
+              "RelativeToolTip": "Controllers\\AnnouncementController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAuwD0AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T14:23:38.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\UserRepository.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:24:58.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppExtensions.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Extensions\\AppExtensions.cs",
+              "RelativeDocumentMoniker": "Extensions\\AppExtensions.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Extensions\\AppExtensions.cs",
+              "RelativeToolTip": "Extensions\\AppExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:27:03.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-18T11:17:50.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Models\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "Models\\RefreshToken.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Models\\RefreshToken.cs",
+              "RelativeToolTip": "Models\\RefreshToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:14:53.697Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Data\\DataContext.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Data\\DataContext.cs",
+              "RelativeToolTip": "Data\\DataContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA7wCAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:07:51.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAADwvzoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:04:42.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AnnouncementUpdateDto.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Dtos\\AnnouncementUpdateDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\AnnouncementUpdateDto.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Dtos\\AnnouncementUpdateDto.cs",
+              "RelativeToolTip": "Dtos\\AnnouncementUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T17:51:13.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GlobalErrorHandling.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Middleware\\GlobalErrorHandling.cs",
+              "RelativeDocumentMoniker": "Middleware\\GlobalErrorHandling.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Middleware\\GlobalErrorHandling.cs",
+              "RelativeToolTip": "Middleware\\GlobalErrorHandling.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAYwA8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T17:34:07.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CategoryEnum.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Enums\\CategoryEnum.cs",
+              "RelativeDocumentMoniker": "Enums\\CategoryEnum.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Enums\\CategoryEnum.cs",
+              "RelativeToolTip": "Enums\\CategoryEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T15:29:28.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Announcement.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Models\\Announcement.cs",
+              "RelativeDocumentMoniker": "Models\\Announcement.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Models\\Announcement.cs",
+              "RelativeToolTip": "Models\\Announcement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T14:49:46.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IAnnouncementRepository.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Repositories\\Interfaces\\IAnnouncementRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IAnnouncementRepository.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Repositories\\Interfaces\\IAnnouncementRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IAnnouncementRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T14:26:13.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AnnouncementRepository.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Repositories\\AnnouncementRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\AnnouncementRepository.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Repositories\\AnnouncementRepository.cs",
+              "RelativeToolTip": "Repositories\\AnnouncementRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T14:25:55.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IAnnouncementService.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Services\\Interfaces\\IAnnouncementService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IAnnouncementService.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Services\\Interfaces\\IAnnouncementService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IAnnouncementService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T14:25:38.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAlwDAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T11:58:46.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AnnouncementService.cs",
+              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Services\\AnnouncementService.cs",
+              "RelativeDocumentMoniker": "Services\\AnnouncementService.cs",
+              "ToolTip": "D:\\Study\\Projects\\Announcements\\AnnouncementsAPI\\Services\\AnnouncementService.cs",
+              "RelativeToolTip": "Services\\AnnouncementService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T12:56:19.73Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

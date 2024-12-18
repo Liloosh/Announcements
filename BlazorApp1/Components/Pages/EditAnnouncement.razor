@@ -1,0 +1,8 @@
+﻿@page "/edit-announcement/{AnnouncementId:int}"
+
+<AnnouncementForm AnnouncementId="@AnnouncementId" />
+
+@code {
+    [Parameter]
+    public int AnnouncementId { get; set; }
+}

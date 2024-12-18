@@ -1,0 +1,305 @@
+﻿@page "/"
+@using BlazorApp1.Enums
+@using BlazorApp1.Models
+@using Blazored.LocalStorage
+@using System.IdentityModel.Tokens.Jwt
+@using System.Net.Http.Headers
+@rendermode InteractiveServer
+@inject IHttpClientFactory _httpClientFactory
+@inject IConfiguration _configuration
+@inject NavigationManager Navigation
+@inject ILocalStorageService localStorage
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Announcements</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                @if (isLoggedIn)
+                {
+                    <li class="nav-item">
+                        <span class="nav-link">Привіт, <strong>@userName</strong>!</span>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-danger" @onclick="Logout">Вийти</button>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Зареєструватися</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Логін</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<PageTitle>Home</PageTitle>
+
+<div class="container my-4 p-4 border rounded shadow" style="max-width: 600px; background-color: #f8f9fa;">
+    <h4 class="mb-4 text-center">Фільтрувати оголошення</h4>
+
+    <div class="form-group mb-3">
+        <label for="category" class="form-label">Категорія</label>
+        <select id="category" class="form-control" @onchange="OnCategoryChanged" style="cursor: pointer;">
+            <option value="">Оберіть категорію</option>
+            @foreach (var category in Enum.GetValues<CategoryEnum>())
+            {
+                <option value="@category">@category</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="subCategory" class="form-label">Підкатегорія</label>
+        <select id="subCategory" class="form-control" @onchange="OnSubCategoryChanged" style="cursor: pointer;">
+            <option value="-1">Оберіть підкатегорію</option>
+            @foreach (var subCategory in filteredSubCategories)
+            {
+                <option value="@subCategory">@subCategory</option>
+            }
+        </select>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-primary me-2" @onclick="FilterAnnouncements" style="width: 48%;">Фільтрувати</button>
+        @if (isLoggedIn)
+        {
+            <button class="btn btn-success" @onclick="CreateAnnouncement" style="width: 48%;">Створити оголошення</button>
+        }
+    </div>
+</div>
+
+<div class="container my-4 p-4 flex flex-column align-items-center" style="width:fit-content;">
+@if (data != null)
+{
+    @foreach (var item in data)
+    {
+        <AnnouncementCard AnnouncementId="@item.Id"
+                          AnnouncementCreationDate="@item.CreatedDate"
+                          AnnouncementTitle="@item.Title"
+                          AnnouncementDescription="@item.Description"
+                          Status="@item.Status"
+                          Category="@((CategoryEnum)item.Category)"
+                          SubCategory="@item.SubCategory"
+                          OnUpdateClick="(id) => OnUpdateClick(id)"
+                          OnDelete="(id) => OnDeleteClick(id)"
+                          isLoggedIn = "@isLoggedIn"/>
+    }
+}
+else if (isLoading)
+{
+    <p>Loading...</p>
+}
+else if (errorMessage != null)
+{
+    <p style="color: red">Error: @errorMessage</p>
+}
+</div>
+
+@code {
+    private bool isLoggedIn;
+    private string userName;
+    private bool hasInitialized;
+    private List<Announcement>? data;
+    private bool isLoading = false;
+    private string? errorMessage;
+
+    private bool categorySelected = false;
+    private CategoryEnum? selectedCategory;
+    private object? selectedSubCategory;
+
+    private List<object> filteredSubCategories = new List<object>();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && !hasInitialized)
+        {
+            hasInitialized = true;
+            var token = await localStorage.GetItemAsync<string>("token");
+
+            if (!string.IsNullOrEmpty(token))
+            {
+                var handler = new JwtSecurityTokenHandler();
+                var jwtToken = handler.ReadJwtToken(token);
+
+                userName = jwtToken.Claims.First(claim => claim.Type == "UserName").Value;
+                isLoggedIn = true;
+                await localStorage.SetItemAsync("username", userName);
+            }
+            else
+            {
+                isLoggedIn = false;
+                userName = "";
+            }
+        }
+
+        StateHasChanged();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoading = true;
+        errorMessage = null;
+
+        try
+        {
+            var handler = new HttpClientHandler
+                {
+                    ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+                };
+            var client = new HttpClient(handler);
+
+            data = await client.GetFromJsonAsync<List<Announcement>>($"{_configuration.GetConnectionString("ApiConnectionString")}/api/Announcement");
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void OnCategoryChanged(ChangeEventArgs e)
+    {
+        selectedSubCategory = null;
+        selectedCategory = null;
+        filteredSubCategories.Clear();
+
+        if (!e.Value.ToString().Equals("-1") && Enum.TryParse<CategoryEnum>(e.Value.ToString(), out var category))
+        {
+            selectedCategory = category;
+
+            switch (category)
+            {
+                case CategoryEnum.ComputerEquipment:
+                    filteredSubCategories = Enum.GetValues<ComputerSubCategoryEmun>().Cast<object>().ToList();
+                    break;
+
+                case CategoryEnum.HouseholdAppliances:
+                    filteredSubCategories = Enum.GetValues<HouseholdSubCategoryEnum>().Cast<object>().ToList();
+                    break;
+
+                case CategoryEnum.Smartphones:
+                    filteredSubCategories = Enum.GetValues<SmartphoneSubCategoryEmun>().Cast<object>().ToList();
+                    break;
+
+                case CategoryEnum.Other:
+                    filteredSubCategories = Enum.GetValues<OtherSubCategoryEnum>().Cast<object>().ToList();
+                    break;
+
+                default:
+                    selectedCategory = null;
+                    break;
+            }
+        }
+    }
+
+    private void OnSubCategoryChanged(ChangeEventArgs e)
+    {
+        if (selectedCategory == CategoryEnum.ComputerEquipment && Enum.TryParse<ComputerSubCategoryEmun>(e.Value.ToString(), out var computerSub))
+        {
+            selectedSubCategory = computerSub;
+        }
+        else if (selectedCategory == CategoryEnum.HouseholdAppliances && Enum.TryParse<HouseholdSubCategoryEnum>(e.Value.ToString(), out var householdSub))
+        {
+            selectedSubCategory = householdSub;
+        }
+        else if (selectedCategory == CategoryEnum.Smartphones && Enum.TryParse<SmartphoneSubCategoryEmun>(e.Value.ToString(), out var smartphoneSub))
+        {
+            selectedSubCategory = smartphoneSub;
+        }
+        else if (selectedCategory == CategoryEnum.Other && Enum.TryParse<OtherSubCategoryEnum>(e.Value.ToString(), out var otherSub))
+        {
+            selectedSubCategory = otherSub;
+        }
+    }
+
+    private void CreateAnnouncement()
+    {
+        Navigation.NavigateTo("/create-announcement");
+    }
+
+    private async Task FilterAnnouncements()
+    {
+        isLoading = true;
+        errorMessage = null;
+
+        try
+        {
+            var handler = new HttpClientHandler
+                    {
+                        ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+                    };
+            var client = new HttpClient(handler);
+
+            var filterUrl = "";
+
+            if(selectedCategory == null)
+            {
+                filterUrl = $"{_configuration.GetConnectionString("ApiConnectionString")}/api/Announcement";
+            }
+            else
+            {
+                filterUrl = $"{_configuration.GetConnectionString("ApiConnectionString")}/api/Announcement?CategotyId={(int)selectedCategory}";
+
+                if (selectedSubCategory != null)
+                {
+                    filterUrl += $"&SubcategoryId={(int)selectedSubCategory}";
+                }
+            }
+
+            data = await client.GetFromJsonAsync<List<Announcement>>(filterUrl);
+
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+
+    }
+
+    private void OnUpdateClick(int announcementId)
+    {
+        Navigation.NavigateTo($"/edit-announcement/{announcementId}");
+    }
+
+    private async Task OnDeleteClick(int announcementId)
+    {
+        var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            };
+        var client = new HttpClient(handler);
+
+        var token = await localStorage.GetItemAsync<string>("token");
+
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+        await client.DeleteAsync($"{_configuration.GetConnectionString("ApiConnectionString")}/api/Announcement/{announcementId}");
+
+        data = await client.GetFromJsonAsync<List<Announcement>>($"{_configuration.GetConnectionString("ApiConnectionString")}/api/Announcement");
+    }
+
+
+    private async Task Logout()
+    {
+        await localStorage.RemoveItemAsync("token");
+        isLoggedIn = false;
+        userName = "";
+        StateHasChanged();
+    }
+}

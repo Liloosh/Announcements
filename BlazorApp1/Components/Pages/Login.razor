@@ -1,0 +1,91 @@
+﻿@page "/login"
+@rendermode InteractiveServer
+@inject IConfiguration _configuration
+@inject NavigationManager Navigation
+@using System.ComponentModel.DataAnnotations
+@using AnnouncementsAPI.Dtos
+@using Blazored.LocalStorage;
+@inject ILocalStorageService localStorage
+
+<h3 class="text-center my-4" style="color: #007bff; font-weight: bold;">Логін</h3>
+
+<div style="display: flex; justify-content: center; width: 100%;">
+    <EditForm Model="@loginModel" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="username" style="font-weight: 500; color: #495057;">Email</label>
+            <InputText id="username" class="form-control" @bind-Value="loginModel.Username" style="border-radius: 5px; padding: 10px;" />
+            <ValidationMessage For="@(() => loginModel.Username)" style="color: #dc3545;" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="password" style="font-weight: 500; color: #495057;">Пароль</label>
+            <InputText id="password" class="form-control" @bind-Value="loginModel.Password" type="password" style="border-radius: 5px; padding: 10px;" />
+            <ValidationMessage For="@(() => loginModel.Password)" style="color: #dc3545;" />
+        </div>
+
+        @if (loginFailed)
+        {
+            <div class="alert alert-danger" role="alert">
+                Password or Email are incorrect
+            </div>
+        }
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-block" style="background-color: #007bff; border: none; border-radius: 5px; padding: 12px 20px; font-size: 16px; box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1); transition: background-color 0.3s ease;">
+                Увійти
+            </button>
+        </div>
+
+        <div class="text-center mt-3">
+            <p style="color: #6c757d;">Ще немає облікового запису? <a href="/register" style="color: #007bff; text-decoration: none; font-weight: bold;">Зареєструватися</a></p>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    private LoginResponseWithoutRefreshTokenDto data;
+    private LoginModel loginModel = new LoginModel();
+    private bool loginFailed = false;
+
+    private async Task HandleValidSubmit()
+    {
+        var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            };
+        var client = new HttpClient(handler);
+
+        var response = await client.PostAsJsonAsync($"{_configuration.GetConnectionString("ApiConnectionString")}/api/User/login",
+        new
+        {
+            Email = loginModel.Username,
+            Password = loginModel.Password
+        });
+
+        if(response.StatusCode != System.Net.HttpStatusCode.OK)
+        {
+            loginFailed = true;
+            return;
+        }
+
+        data = await response.Content.ReadFromJsonAsync<LoginResponseWithoutRefreshTokenDto>();
+
+        if (data != null && !string.IsNullOrEmpty(data.Token))
+        {
+            await localStorage.SetItemAsync("token", data.Token);
+            Navigation.NavigateTo("/");
+        }
+    }
+
+    public class LoginModel
+    {
+        [Required(ErrorMessage = "Ім'я користувача обов'язкове")]
+        public string Username { get; set; }
+
+        [Required(ErrorMessage = "Пароль обов'язковий")]
+        public string Password { get; set; }
+    }
+}

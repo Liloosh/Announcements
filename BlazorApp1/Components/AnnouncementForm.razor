@@ -1,0 +1,167 @@
+﻿@using BlazorApp1.Enums
+@using BlazorApp1.Models
+@using System.Net.Http.Headers
+@using Blazored.LocalStorage
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IConfiguration _configuration
+@inject ILocalStorageService localStorage
+
+<EditForm Model="announcement" OnValidSubmit="OnSaveClick" class="container my-4 p-4 border rounded shadow" style="max-width: 700px; background-color: #f9f9f9;">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <h4 class="text-center mb-4">Створення оголошення</h4>
+
+    <div class="form-group mb-3">
+        <label for="Title" class="form-label fw-bold">Заголовок</label>
+        <InputText id="Title" class="form-control" @bind-Value="announcement.Title" placeholder="Введіть заголовок оголошення" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Description" class="form-label fw-bold">Опис</label>
+        <InputTextArea id="Description" class="form-control" @bind-Value="announcement.Description" placeholder="Введіть опис оголошення" style="resize: none;" rows="4" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="category" class="form-label fw-bold">Категорія</label>
+        <select id="category" class="form-control" @onchange="OnCategoryChanged" style="cursor: pointer;">
+            <option value="">Оберіть категорію</option>
+            @foreach (var category in Enum.GetValues<CategoryEnum>())
+            {
+                <option value="@category">@category</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="subCategory" class="form-label fw-bold">Підкатегорія</label>
+        <select id="subCategory" class="form-control" @onchange="OnSubCategoryChanged" style="cursor: pointer;">
+            <option value="">Оберіть підкатегорію</option>
+            @foreach (var subCategory in subCategoryList)
+            {
+                <option value="@subCategory">@subCategory</option>
+            }
+        </select>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary w-45">Зберегти</button>
+        <button type="button" class="btn btn-secondary w-45" @onclick="OnCancelClick">Скасувати</button>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int? AnnouncementId { get; set; }
+
+    private Announcement announcement = new Announcement();
+    private CategoryEnum selectedCategory;
+    private object? selectedSubCategory;
+    private List<object> subCategoryList = new List<object>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (AnnouncementId.HasValue)
+        {
+            announcement = await GetAnnouncementById(AnnouncementId.Value);
+            selectedCategory = (CategoryEnum)announcement.Category;
+        }
+    }
+
+    private async Task<Announcement> GetAnnouncementById(int id)
+    {
+        var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            };
+        var client = new HttpClient(handler);
+
+        return await client.GetFromJsonAsync<Announcement>($"{_configuration.GetConnectionString("ApiConnectionString")}/api/Announcement/{id}");
+    }
+
+    private async void OnSaveClick()
+    {
+        var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            };
+        var client = new HttpClient(handler);
+
+        announcement.Status = 1;
+        announcement.Category = (int)selectedCategory;
+        announcement.SubCategory = (int)selectedSubCategory;
+
+        var token = await localStorage.GetItemAsync<string>("token");
+
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+        if (AnnouncementId.HasValue)
+        {
+            await client.PutAsJsonAsync($"{_configuration.GetConnectionString("ApiConnectionString")}/api/Announcement", announcement);
+        }
+        else
+        {
+            announcement.CreatedDate = DateTime.UtcNow;
+            await client.PostAsJsonAsync($"{_configuration.GetConnectionString("ApiConnectionString")}/api/Announcement", announcement);
+        }
+        Navigation.NavigateTo("/");
+    }
+
+    private void OnCancelClick()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+    private void OnCategoryChanged(ChangeEventArgs e)
+    {
+        subCategoryList.Clear();
+
+        if (Enum.TryParse<CategoryEnum>(e.Value.ToString(), out var category))
+        {
+            selectedCategory = category;
+
+            switch (category)
+            {
+                case CategoryEnum.ComputerEquipment:
+                    subCategoryList = Enum.GetValues<ComputerSubCategoryEmun>().Cast<object>().ToList();
+                    break;
+
+                case CategoryEnum.HouseholdAppliances:
+                    subCategoryList = Enum.GetValues<HouseholdSubCategoryEnum>().Cast<object>().ToList();
+                    break;
+
+                case CategoryEnum.Smartphones:
+                    subCategoryList = Enum.GetValues<SmartphoneSubCategoryEmun>().Cast<object>().ToList();
+                    break;
+
+                case CategoryEnum.Other:
+                    subCategoryList = Enum.GetValues<OtherSubCategoryEnum>().Cast<object>().ToList();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    }
+
+    private void OnSubCategoryChanged(ChangeEventArgs e)
+    {
+        if (selectedCategory == CategoryEnum.ComputerEquipment && Enum.TryParse<ComputerSubCategoryEmun>(e.Value.ToString(), out var computerSub))
+        {
+            selectedSubCategory = computerSub;
+        }
+        else if (selectedCategory == CategoryEnum.HouseholdAppliances && Enum.TryParse<HouseholdSubCategoryEnum>(e.Value.ToString(), out var householdSub))
+        {
+            selectedSubCategory = householdSub;
+        }
+        else if (selectedCategory == CategoryEnum.Smartphones && Enum.TryParse<SmartphoneSubCategoryEmun>(e.Value.ToString(), out var smartphoneSub))
+        {
+            selectedSubCategory = smartphoneSub;
+        }
+        else if (selectedCategory == CategoryEnum.Other && Enum.TryParse<OtherSubCategoryEnum>(e.Value.ToString(), out var otherSub))
+        {
+            selectedSubCategory = otherSub;
+        }
+    }
+}

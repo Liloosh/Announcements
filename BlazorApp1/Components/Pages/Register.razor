@@ -1,0 +1,98 @@
+﻿@page "/register"
+@rendermode InteractiveServer
+@inject IConfiguration _configuration
+@inject NavigationManager Navigation
+@using System.ComponentModel.DataAnnotations
+@using AnnouncementsAPI.Dtos
+@using AnnouncementsAPI.Enums
+
+<h3 class="text-center my-4" style="color: #007bff; font-weight: bold;">Реєстрація</h3>
+
+<div style="display: flex; justify-content: center; width: 100%;">
+    <EditForm Model="@registerModel" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group" style="margin-bottom: 20px; width: 400px;">
+            <label for="username" style="font-weight: 500; color: #495057;">Ім'я користувача</label>
+            <InputText id="username" class="form-control" @bind-Value="registerModel.Username" style="border-radius: 5px; padding: 10px;" />
+            <ValidationMessage For="@(() => registerModel.Username)" style="color: #dc3545;" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="email" style="font-weight: 500; color: #495057;">Email</label>
+            <InputText id="email" class="form-control" @bind-Value="registerModel.Email" style="border-radius: 5px; padding: 10px;" />
+            <ValidationMessage For="@(() => registerModel.Email)" style="color: #dc3545;" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="password" style="font-weight: 500; color: #495057;">Пароль</label>
+            <InputText id="password" class="form-control" @bind-Value="registerModel.Password" type="password" style="border-radius: 5px; padding: 10px;" />
+            <ValidationMessage For="@(() => registerModel.Password)" style="color: #dc3545;" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="confirmPassword" style="font-weight: 500; color: #495057;">Підтвердження паролю</label>
+            <InputText id="confirmPassword" class="form-control" @bind-Value="registerModel.ConfirmPassword" type="password" style="border-radius: 5px; padding: 10px;" />
+            <ValidationMessage For="@(() => registerModel.ConfirmPassword)" style="color: #dc3545;" />
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-block" style="background-color: #007bff; border: none; border-radius: 5px; padding: 12px 20px; font-size: 16px; box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1); transition: background-color 0.3s ease;">
+                Зареєструватися
+            </button>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    private RegisterResponse data;
+    private RegisterModel registerModel = new RegisterModel();
+
+    private async Task HandleValidSubmit()
+    {
+        var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            };
+        var client = new HttpClient(handler);
+
+        var response = await client.PostAsJsonAsync($"{_configuration.GetConnectionString("ApiConnectionString")}/api/User/register",
+        new
+        {
+            UserName = registerModel.Username,
+            Email = registerModel.Email,
+            Password = registerModel.Password
+        });
+
+        data = await response.Content.ReadFromJsonAsync<RegisterResponse>();
+
+        if (data != null)
+        {
+            switch (data.Response)
+            {
+                case RegisterResponseEnum.Ok:
+                    Navigation.NavigateTo("/");
+                    break;
+            }
+        }
+    }
+
+    public class RegisterModel
+    {
+        [Required(ErrorMessage = "Ім'я користувача обов'язкове")]
+        public string Username { get; set; }
+
+        [Required(ErrorMessage = "Email обов'язковий")]
+        [EmailAddress(ErrorMessage = "Невірний формат email")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Пароль обов'язковий")]
+        [MinLength(6, ErrorMessage = "Пароль має бути не менше 6 символів")]
+        public string Password { get; set; }
+
+        [Required(ErrorMessage = "Підтвердження паролю обов'язкове")]
+        [Compare("Password", ErrorMessage = "Паролі не співпадають")]
+        public string ConfirmPassword { get; set; }
+    }
+}

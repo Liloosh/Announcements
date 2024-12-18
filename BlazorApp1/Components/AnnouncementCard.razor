@@ -1,0 +1,93 @@
+﻿@rendermode InteractiveServer
+@using System.Runtime.Serialization
+@using BlazorApp1.Enums
+@inject NavigationManager Navigation
+<div class="card shadow-sm mb-3" style="width: 700px;">
+    <div class="card-header text-white bg-primary text-center">
+        <h5 class="mb-0">@AnnouncementTitle</h5>
+        <small class="d-block mt-1" style="font-size: 12px;">
+            Категорія: @GetCategoryName() (@GetSubCategoryName())
+        </small>
+    </div>
+    <div class="card-body" style="font-size: 14px; color: #333;">
+        <p class="card-text mb-0" style="text-align: justify;">
+            @AnnouncementDescription
+        </p>
+    </div>
+    <div class="card-footer bg-light d-flex justify-content-between align-items-center" style="font-size: 12px;">
+        <span class="fw-bold" style="color: @(Status == 1 ? "#28a745" : "#dc3545");">
+            Status: @(Status == 1 ? "Active" : "Inactive")
+        </span>
+        <span class="text-muted">
+            @AnnouncementCreationDate.ToString("MMMM dd, yyyy")
+        </span>
+    </div>
+    @if (isLoggedIn)
+    {
+        <div class="card-footer bg-white d-flex justify-content-between">
+            <button class="btn btn-sm btn-warning" @onclick="OnUpdateButtonClick">Оновити</button>
+            <button class="btn btn-sm btn-danger" @onclick="OnDeleteClick">Видалити</button>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public bool isLoggedIn { get; set; } = false;
+    [Parameter]
+    public int AnnouncementId { get; set; }
+    [Parameter]
+    public string AnnouncementTitle { get; set; } = "Default";
+    [Parameter]
+    public string AnnouncementDescription { get; set; } = "Default";
+    [Parameter]
+    public DateTime AnnouncementCreationDate { get; set; } = DateTime.UtcNow;
+    [Parameter]
+    public int Status { get; set; }
+    [Parameter]
+    public CategoryEnum Category { get; set; }
+    [Parameter]
+    public int SubCategory { get; set; }
+    [Parameter]
+    public EventCallback<int> OnUpdateClick { get; set; }
+    [Parameter]
+    public EventCallback<int> OnDelete { get; set; }
+
+    async Task OnUpdateButtonClick()
+    {
+        await OnUpdateClick.InvokeAsync(AnnouncementId);
+    }
+
+    private async Task OnDeleteClick()
+    {
+        await OnDelete.InvokeAsync(AnnouncementId);
+    }
+
+    private string GetCategoryName()
+    {
+        return GetEnumName<CategoryEnum>((int)Category);
+    }
+
+    private string GetSubCategoryName()
+    {
+        return Category switch
+        {
+            CategoryEnum.ComputerEquipment => GetEnumName<ComputerSubCategoryEmun>(SubCategory),
+            CategoryEnum.HouseholdAppliances => GetEnumName<HouseholdSubCategoryEnum>(SubCategory),
+            CategoryEnum.Smartphones => GetEnumName<SmartphoneSubCategoryEmun>(SubCategory),
+            CategoryEnum.Other => GetEnumName<OtherSubCategoryEnum>(SubCategory),
+            _ => "Unknown"
+        };
+    }
+
+    private string GetEnumName<TEnum>(int value) where TEnum : Enum
+    {
+        var enumValue = (TEnum)Enum.ToObject(typeof(TEnum), value);
+        var enumMember = enumValue.GetType()
+                                  .GetField(enumValue.ToString())
+                                  ?.GetCustomAttributes(typeof(EnumMemberAttribute), false)
+                                  .FirstOrDefault() as EnumMemberAttribute;
+
+        return enumMember?.Value ?? enumValue.ToString();
+    }
+}
