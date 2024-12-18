@@ -1,5 +1,4 @@
-# Deployment Guide for ASP.NET Web API and Blazor App
-
+# Deployment Guide for Announcement App
 This project consists of two main components:
 1. **ASP.NET Web API** - The backend providing APIs for data access.
 2. **Blazor App** - The frontend enabling user interactions through the interface.
