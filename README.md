@@ -29,7 +29,8 @@ Ensure the following tools are installed:
       CreatedDate DATETIME NOT NULL DEFAULT GETDATE(),
       Status NVARCHAR(50) NOT NULL,
       Category NVARCHAR(100) NOT NULL,
-      SubCategory NVARCHAR(100) NULL
+      SubCategory NVARCHAR(100) NULL,
+      UserId NVARCHAR(450)
     );
     GO
 
@@ -120,7 +121,12 @@ Ensure the following tools are installed:
    ```bash
     dotnet database update
     ```
-4. Run the API project using the command:
+4. Add refs between datatables using the following SQL script:
+    ```sql
+    ALTER TABLE Announcements
+    ADD FOREIGN KEY (UserId) REFERENCES AspNetUsers(Id)
+    ```
+5. Run the API project using the command:
 
     ```bash
     dotnet run
