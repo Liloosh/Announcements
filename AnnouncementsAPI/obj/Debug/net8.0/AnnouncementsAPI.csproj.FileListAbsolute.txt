@@ -193,3 +193,4 @@ D:\Study\Projects\Announcements\AnnouncementsAPI\bin\Debug\net8.0\runtimes\win\l
 D:\Study\Projects\Announcements\AnnouncementsAPI\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Study\Projects\Announcements\AnnouncementsAPI\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Study\Projects\Announcements\AnnouncementsAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Study\Projects\Announcements\AnnouncementsAPI\obj\Debug\net8.0\AnnouncementsAPI.sourcelink.json

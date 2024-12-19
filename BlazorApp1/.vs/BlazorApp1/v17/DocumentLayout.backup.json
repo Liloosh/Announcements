@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|d:\\study\\projects\\announcements\\blazorapp1\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|solutionrelative:components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|d:\\study\\projects\\announcements\\blazorapp1\\components\\announcementform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|solutionrelative:components\\announcementform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|d:\\study\\projects\\announcements\\blazorapp1\\components\\announcementcard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|solutionrelative:components\\announcementcard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|d:\\study\\projects\\announcements\\blazorapp1\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|d:\\study\\projects\\announcements\\blazorapp1\\components\\announcementcard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|solutionrelative:components\\announcementcard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|d:\\study\\projects\\announcements\\blazorapp1\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|solutionrelative:components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{111A1D4E-D3CE-4604-A365-1FB1C5F75F45}|BlazorApp1.csproj|d:\\study\\projects\\announcements\\blazorapp1\\components\\pages\\editannouncement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -42,63 +38,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AnnouncementForm.razor",
-              "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\AnnouncementForm.razor",
-              "RelativeDocumentMoniker": "Components\\AnnouncementForm.razor",
-              "ToolTip": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\AnnouncementForm.razor",
-              "RelativeToolTip": "Components\\AnnouncementForm.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-17T16:28:34.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "AnnouncementCard.razor",
               "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\AnnouncementCard.razor",
               "RelativeDocumentMoniker": "Components\\AnnouncementCard.razor",
               "ToolTip": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\AnnouncementCard.razor",
               "RelativeToolTip": "Components\\AnnouncementCard.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-18T14:46:49.16Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Home.razor",
               "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
               "ToolTip": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-18T11:51:58.428Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Login.razor",
               "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Login.razor",
               "ToolTip": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\Pages\\Login.razor",
               "RelativeToolTip": "Components\\Pages\\Login.razor",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEcAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-18T11:48:57.441Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "EditAnnouncement.razor",
               "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\Pages\\EditAnnouncement.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\EditAnnouncement.razor",
@@ -106,12 +89,11 @@
               "RelativeToolTip": "Components\\Pages\\EditAnnouncement.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-17T18:01:48.108Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T18:01:48.108Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "CreateAnnouncements.razor",
               "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Components\\Pages\\CreateAnnouncements.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\CreateAnnouncements.razor",
@@ -123,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "AnnouncementUpdateDto.cs",
               "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Dtos\\AnnouncementUpdateDto.cs",
               "RelativeDocumentMoniker": "Dtos\\AnnouncementUpdateDto.cs",
@@ -135,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Study\\Projects\\Announcements\\BlazorApp1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",

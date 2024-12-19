@@ -1,7 +1,11 @@
 ﻿@rendermode InteractiveServer
 @using System.Runtime.Serialization
 @using BlazorApp1.Enums
+@using System.IdentityModel.Tokens.Jwt
+@using Blazored.LocalStorage
 @inject NavigationManager Navigation
+@inject ILocalStorageService localStorage
+
 <div class="card shadow-sm mb-3" style="width: 700px;">
     <div class="card-header text-white bg-primary text-center">
         <h5 class="mb-0">@AnnouncementTitle</h5>
@@ -22,7 +26,7 @@
             @AnnouncementCreationDate.ToString("MMMM dd, yyyy")
         </span>
     </div>
-    @if (isLoggedIn)
+    @if (isLoggedIn && (userId == jwtUserId))
     {
         <div class="card-footer bg-white d-flex justify-content-between">
             <button class="btn btn-sm btn-warning" @onclick="OnUpdateButtonClick">Оновити</button>
@@ -34,6 +38,10 @@
 @code {
     [Parameter]
     public bool isLoggedIn { get; set; } = false;
+    [Parameter]
+    public string userId { get; set; }
+    [Parameter]
+    public string jwtUserId { get; set; }
     [Parameter]
     public int AnnouncementId { get; set; }
     [Parameter]

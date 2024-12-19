@@ -1,6 +1,7 @@
 using AnnouncementsAPI.Data;
 using AnnouncementsAPI.Extensions;
 using AnnouncementsAPI.Middleware;
+using AnnouncementsAPI.Requirements;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -58,6 +59,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     };
 });
 
+builder.Services.AddAuthorization(option =>
+{
+    option.AddPolicy("AnnouncementRequirements", policy =>
+    {
+        policy.Requirements.Add(new AnnouncementRequirements());
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -71,9 +80,10 @@ app.UseHttpsRedirection();
 
 app.UseGlobalErrorHandling();
 
-app.UseCors("main");
-
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseCors("main");
 
 app.MapControllers();
 

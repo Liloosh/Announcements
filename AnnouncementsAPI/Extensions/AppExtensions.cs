@@ -1,7 +1,9 @@
 ﻿using AnnouncementsAPI.Repositories;
 using AnnouncementsAPI.Repositories.Interfaces;
+using AnnouncementsAPI.Requirements;
 using AnnouncementsAPI.Services;
 using AnnouncementsAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AnnouncementsAPI.Extensions
 {
@@ -17,6 +19,7 @@ namespace AnnouncementsAPI.Extensions
         {
             serviceCollection.AddScoped<IAnnouncementService, AnnouncementService>();
             serviceCollection.AddScoped<IUserService, UserService>();
+            serviceCollection.AddSingleton<IAuthorizationHandler, AnnouncementRequirementHandler>();
         }
     }
 }

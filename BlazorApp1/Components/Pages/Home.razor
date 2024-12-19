@@ -83,15 +83,18 @@
     @foreach (var item in data)
     {
         <AnnouncementCard AnnouncementId="@item.Id"
-                          AnnouncementCreationDate="@item.CreatedDate"
-                          AnnouncementTitle="@item.Title"
-                          AnnouncementDescription="@item.Description"
-                          Status="@item.Status"
-                          Category="@((CategoryEnum)item.Category)"
-                          SubCategory="@item.SubCategory"
-                          OnUpdateClick="(id) => OnUpdateClick(id)"
-                          OnDelete="(id) => OnDeleteClick(id)"
-                          isLoggedIn = "@isLoggedIn"/>
+                            AnnouncementCreationDate="@item.CreatedDate"
+                            AnnouncementTitle="@item.Title"
+                            AnnouncementDescription="@item.Description"
+                            Status="@item.Status"
+                            Category="@((CategoryEnum)item.Category)"
+                            SubCategory="@item.SubCategory"
+                            OnUpdateClick="(id) => OnUpdateClick(id)"
+                            OnDelete="(id) => OnDeleteClick(id)"
+                            isLoggedIn="@isLoggedIn"
+                            userId="@item.UserId"
+                            jwtUserId="@userId" />
+
     }
 }
 else if (isLoading)
@@ -107,6 +110,7 @@ else if (errorMessage != null)
 @code {
     private bool isLoggedIn;
     private string userName;
+    private string userId;
     private bool hasInitialized;
     private List<Announcement>? data;
     private bool isLoading = false;
@@ -131,6 +135,7 @@ else if (errorMessage != null)
                 var jwtToken = handler.ReadJwtToken(token);
 
                 userName = jwtToken.Claims.First(claim => claim.Type == "UserName").Value;
+                userId = jwtToken.Claims.First(claim => claim.Type == "UserId").Value;
                 isLoggedIn = true;
                 await localStorage.SetItemAsync("username", userName);
             }

@@ -43,7 +43,7 @@ namespace AnnouncementsAPI.Controllers
         }
 
         [HttpPut]
-        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(AuthenticationSchemes = "Bearer", Policy = "AnnouncementRequirements")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateAnnouncement([FromBody] AnnouncementUpdateDto announcement)
@@ -58,7 +58,7 @@ namespace AnnouncementsAPI.Controllers
 
         [HttpDelete]
         [Route("{announcementId:int}")]
-        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(AuthenticationSchemes = "Bearer", Policy = "AnnouncementRequirements")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> DeleteAnnouncement([FromRoute] int announcementId)

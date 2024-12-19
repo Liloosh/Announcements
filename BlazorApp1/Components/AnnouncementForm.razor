@@ -2,6 +2,7 @@
 @using BlazorApp1.Models
 @using System.Net.Http.Headers
 @using Blazored.LocalStorage
+@using System.IdentityModel.Tokens.Jwt
 @rendermode InteractiveServer
 @inject NavigationManager Navigation
 @inject IConfiguration _configuration
@@ -102,7 +103,12 @@
         }
         else
         {
+            var handlerr = new JwtSecurityTokenHandler();
+            var jwtToken = handlerr.ReadJwtToken(token);
+
+            var userId = jwtToken.Claims.First(claim => claim.Type == "UserId").Value;
             announcement.CreatedDate = DateTime.UtcNow;
+            announcement.UserId = userId;
             await client.PostAsJsonAsync($"{_configuration.GetConnectionString("ApiConnectionString")}/api/Announcement", announcement);
         }
         Navigation.NavigateTo("/");

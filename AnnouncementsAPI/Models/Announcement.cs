@@ -9,5 +9,6 @@
         public required int Status { get; set; }
         public required int Category { get; set; }
         public int SubCategory { get; set; }
+        public string UserId { get; set; }
     }
 }

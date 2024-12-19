@@ -9,6 +9,7 @@
         public int Status { get; set; }
         public int Category { get; set; }
         public int SubCategory { get; set; }
+        public string UserId { get; set; } = string.Empty;
 
         public Announcement()
         {
